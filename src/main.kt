@@ -27,6 +27,18 @@ fun main(){
     }while (selection != 3)
 }
 
+fun displayQuantity(hotdogStand: Array<Array<String>>){
+    val rowcount = hotdogStand[0].size-1
+
+    // Print everything in the hotdogStand 2d array
+    for (entry in 0..rowcount){
+        val arrayItem = hotdogStand[0][entry]
+        val arrayQuantity = hotdogStand[1][entry]
+        val count = entry+1
+        println("$count $arrayItem: $arrayQuantity in stock")
+    }
+}
+
 // Second menu to select product to edit values of
 fun selectionMenu(hotdogStand: Array<Array<String>>){
     do {
@@ -50,18 +62,6 @@ fun selectionMenu(hotdogStand: Array<Array<String>>){
         }
     // Loop until valid input is entered
     }while (selection != hotdogStand[0].size)
-}
-
-fun displayQuantity(hotdogStand: Array<Array<String>>){
-    val rowcount = hotdogStand[0].size-1
-
-    // Print everything in the hotdogStand 2d array
-    for (entry in 0..rowcount){
-        val arrayItem = hotdogStand[0][entry]
-        val arrayQuantity = hotdogStand[1][entry]
-        val count = entry+1
-        println("$count $arrayItem: $arrayQuantity in stock")
-    }
 }
 
 fun editQuantity(item: Int, hotdogStand: Array<Array<String>>){
